@@ -33,6 +33,7 @@ class FileSystem extends BaseFileSystem
             if (!isset($options['delete']) or $options['delete']) {
                 if (null === $l_iterator) {
                     $flags = \FilesystemIterator::SKIP_DOTS;
+                    if(!is_dir($targetDir)) $this->mkdir ($targetDir);
                     $l_iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($targetDir, $flags), \RecursiveIteratorIterator::CHILD_FIRST );
                 }
 
