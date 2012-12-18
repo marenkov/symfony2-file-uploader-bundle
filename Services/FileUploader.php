@@ -104,7 +104,7 @@ class FileUploader
 
         @mkdir($uploadDir, 0777, true);
 
-        $upload_handler = new \PunkAve\FileUploaderBundle\BlueImp\UploadHandler(
+        $upload_handler = new \PunkAve\FileUploaderBundle\Services\UploadHandler(
             array(
                 'upload_dir' => $uploadDir, 
                 'upload_url' => $webPath . '/' . $originals['folder'] . '/', 
